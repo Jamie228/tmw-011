@@ -21,3 +21,9 @@ font-family: 'Quicksand', sans-serif;
     grid-column: 3 / 5;
     font-family: 'Righteous', cursive;
 }
+
+.weather {
+    grid-column: 1 / 3;
+    font-family: 'Quicksand', sans-serif;
+    
+}
