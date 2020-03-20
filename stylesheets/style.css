@@ -5,20 +5,25 @@ font-family: 'Quicksand', sans-serif;
 
 */
 
-
-.grid-container {
+.header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: "weather title menu";
     padding: 10px;
 }
 
-.grid-container > div {
+.toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: "weather blank menu";
+    padding: 10px;
+}
+
+.toolbar > div {
     padding: 20px;
     text-align: center;
 }
 
-.header {
+.brand {
     grid-column: 2 / 3;
     font-family: 'Righteous', cursive;
 }
