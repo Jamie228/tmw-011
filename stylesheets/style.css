@@ -28,11 +28,11 @@ font-family: 'Quicksand', sans-serif;
 }
 
 .weather {
-    grid-column: 1 / 2;
+    grid-column: 2 / 4;
     font-family: 'Quicksand', sans-serif;
 }
 
 .menuButton {
-    grid-column: 6 / 7;
+    grid-column: 4 / 6;
     font-family: 'Quicksand', sans-serif;
 }
