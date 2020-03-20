@@ -8,18 +8,17 @@ font-family: 'Quicksand', sans-serif;
 .header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
+    text-align: center;
 }
 
 .toolbar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: "weather blank menu";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 10px;
 }
 
 .toolbar > div {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -34,6 +33,6 @@ font-family: 'Quicksand', sans-serif;
 }
 
 .menuButton {
-    grid-column: 3 / 4;
+    grid-column: 6 / 7;
     font-family: 'Quicksand', sans-serif;
 }
