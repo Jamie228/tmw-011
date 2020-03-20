@@ -1,3 +1,11 @@
+/* FONTS
+
+font-family: 'Righteous', cursive;
+font-family: 'Quicksand', sans-serif;
+
+*/
+
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -11,4 +19,5 @@
 
 .header {
     grid-column: 3 / 5;
+    font-family: 'Righteous', cursive;
 }
