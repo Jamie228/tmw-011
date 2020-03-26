@@ -7,7 +7,7 @@ font-family: 'Quicksand', sans-serif;
 
 .header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
 }
 
@@ -21,8 +21,8 @@ font-family: 'Quicksand', sans-serif;
     font-family: 'Quicksand', sans-serif;
 }
 
-.menuButton {
-    grid-column: 3 / 4;
+.menu {
+    grid-column: 2 / 3;
     font-family: 'Quicksand', sans-serif;
 }
 
