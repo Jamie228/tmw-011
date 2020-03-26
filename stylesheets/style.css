@@ -11,17 +11,6 @@ font-family: 'Quicksand', sans-serif;
     text-align: center;
 }
 
-.toolbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
-}
-
-.toolbar > div {
-    padding: 10px;
-    text-align: center;
-}
-
 .brand {
     grid-column: 1 / 2;
     font-family: 'Righteous', cursive;
