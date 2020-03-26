@@ -23,7 +23,7 @@ font-family: 'Quicksand', sans-serif;
 }
 
 .brand {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     font-family: 'Righteous', cursive;
 }
 
