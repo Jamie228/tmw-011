@@ -7,7 +7,8 @@ font-family: 'Quicksand', sans-serif;
 
 .header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "logo nav";
     text-align: center;
 }
 
