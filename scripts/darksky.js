@@ -7,14 +7,43 @@ request.open('GET', "https://cors-anywhere.herokuapp.com/https://api.darksky.net
 request.onload = function () {
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-        const temp = document.createElement("h2");
-        temp.textContent = (data.currently.temperature).toString();
+        //const temp = document.createElement("h2");
+        const celsiusTemp = (data.currently.temperature - 32) * 5/9;
+        //temp.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC";
 
         const summary = document.createElement("h2");
-        summary.textContent = data.currently.summary;
+        summary.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC" + " • " + data.currently.summary + " • ";
 
-        weather.appendChild(temp);
+        const iconName = data.currently.icon;
+
+        const icon = document.createElement("i");
+        icon.setAttribute("style", "font-size:2em;")
+        
+        if (iconName === "clear-day") {
+            icon.setAttribute("class", "wi wi-day-sunny");
+        } else if (iconName === "clear-night") {
+            icon.setAttribute("class", "wi wi-night-clear");
+        } else if (iconName === "rain") {
+            icon.setAttribute("class", "wi wi-rain");
+        } else if (iconName === "snow") {
+            icon.setAttribute("class", "wi wi-snow");
+        } else if (iconName === "sleet") {
+            icon.setAttribute("class", "wi wi-sleet");
+        } else if (iconName === "wind") {
+            icon.setAttribute("class", "wi wi-windy");
+        } else if (iconName === "fog") {
+            icon.setAttribute("class", "wi wi-fog");
+        } else if (iconName === "cloudy") {
+            icon.setAttribute("class", "wi-cloudy");
+        } else if (iconName === "partly-cloudy-day") {
+            icon.setAttribute("class", "wi wi-day-cloudy");
+        } else if (iconName === "partly-cloudy-night") {
+            icon.setAttribute("class", "wi wi-night-partly-cloudy");
+        }
+
+        //weather.appendChild(temp);
         weather.appendChild(summary);
+        summary.appendChild(icon);
     } else {
         const errorMessage = document.createElement("marquee");
         errorMessage.textContent = "It's not working!";
