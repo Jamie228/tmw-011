@@ -12,7 +12,7 @@ request.onload = function () {
         //temp.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC";
 
         const summary = document.createElement("h2");
-        summary.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC" + " • " + data.currently.summary + " • ";
+        summary.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC" + " • " + data.currently.summary + "  ";
 
         const iconName = data.currently.icon;
 
