@@ -28,13 +28,9 @@ font-family: 'Quicksand', sans-serif;
     font-size: 1em;
 }
 
-.menu {
-    grid-column: 2 / 3;
-    font-family: 'Quicksand', sans-serif;
-}
-
 /* Add a black background color to the top navigation */
 .topnav {
+  grid-column: 2 / 3;
     background-color: #333;
     overflow: hidden;
     font-family: 'Quicksand', sans-serif;
