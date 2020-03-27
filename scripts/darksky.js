@@ -39,6 +39,8 @@ request.onload = function () {
             icon.setAttribute("class", "wi wi-day-cloudy");
         } else if (iconName === "partly-cloudy-night") {
             icon.setAttribute("class", "wi wi-night-partly-cloudy");
+        } else {
+            icon.setAttribute("class", "fas fa-times-circle");
         }
 
         //weather.appendChild(temp);
