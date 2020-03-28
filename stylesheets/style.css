@@ -20,6 +20,7 @@ font-family: 'Quicksand', sans-serif;
     margin-bottom: 10px;
     font-family: 'Righteous', cursive;
     font-size: 2em;
+    align-items: center;
 }
 
 .weather {
@@ -75,6 +76,14 @@ font-family: 'Quicksand', sans-serif;
   .carousel-image {
     max-width: 100%;
     height: auto;
+  }
+
+
+
+  footer {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    width: 100%;
   }
 
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
