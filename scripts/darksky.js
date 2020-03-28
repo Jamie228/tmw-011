@@ -12,12 +12,11 @@ request.onload = function () {
         //temp.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC";
 
         const summary = document.createElement("h2");
-        summary.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC" + " • " + data.currently.summary + "  ";
+        summary.textContent = parseFloat(celsiusTemp).toFixed(1) + "º" + " • " + data.currently.summary + "  ";
 
         const iconName = data.currently.icon;
 
         const icon = document.createElement("i");
-        icon.setAttribute("style", "font-size:2em;")
         
         if (iconName === "clear-day") {
             icon.setAttribute("class", "wi wi-day-sunny");
