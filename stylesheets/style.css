@@ -17,7 +17,6 @@ font-family: 'Quicksand', sans-serif;
     align-items: center;
     grid-column: 1 / 2;
     text-align: left;
-    margin-bottom: 10px;
     font-family: 'Righteous', cursive;
     font-size: 2em;
     align-items: center;
@@ -87,9 +86,29 @@ font-family: 'Quicksand', sans-serif;
   }
 
   .footer-social {
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-decoration: none;
     color: black;
+  }
+
+  .footer-social a:link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .footer-social a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  .footer-social a:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  .footer-social a:active {
+    text-decoration: none;
+    color:black;
   }
 
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
