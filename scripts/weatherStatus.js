@@ -4,25 +4,25 @@ var weatherStatus;
 const container = document.getElementById("weather-status");
 const weatherString = document.createElement("h1");
 
-if (weather === "clear-day") {
+if (weatherDesc === "clear-day") {
   weatherStatus = "clear";
-} else if (weather === "clear-night") {
+} else if (weatherDesc === "clear-night") {
   weatherStatus = "clear";
-} else if (weather === "rain") {
+} else if (weatherDesc === "rain") {
   weatherStatus = "raining";
-} else if (weather === "snow") {
+} else if (weatherDesc === "snow") {
   weatherStatus = "snowing";
-} else if (weather === "sleet") {
+} else if (weatherDesc === "sleet") {
   weatherStatus = "sleeting";
-} else if (weather === "wind") {
+} else if (weatherDesc === "wind") {
   weatherStatus = "windy";
-} else if (weather === "fog") {
+} else if (weatherDesc === "fog") {
   weatherStatus = "foggy";
-} else if (weather === "cloudy") {
+} else if (weatherDesc === "cloudy") {
   weatherStatus = "cloudy";
-} else if (weather === "partly-cloudy-day") {
+} else if (weatherDesc === "partly-cloudy-day") {
   weatherStatus = "partly cloudy";
-} else if (weather === "partly-cloudy-night") {
+} else if (weatherDesc === "partly-cloudy-night") {
   weatherStatus = "partly cloudy";
 } else {
   weatherStatus = "difficult to determine the weather";
