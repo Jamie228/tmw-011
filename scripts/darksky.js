@@ -11,14 +11,13 @@ request.open(
 request.onload = function() {
   var data = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
-    //const temp = document.createElement("h2");
     const celsiusTemp = ((data.currently.temperature - 32) * 5) / 9;
-    //temp.textContent = parseFloat(celsiusTemp).toFixed(2) + " ºC";
 
     const summary = document.createElement("h2");
     summary.textContent = parseFloat(celsiusTemp).toFixed(1) + "º" + " ";
 
     const iconName = data.currently.icon;
+    document.cookie = "weather=" + iconName;
 
     const icon = document.createElement("i");
 
@@ -37,7 +36,7 @@ request.onload = function() {
     } else if (iconName === "fog") {
       icon.setAttribute("class", "wi wi-fog");
     } else if (iconName === "cloudy") {
-      icon.setAttribute("class", "wi-cloudy");
+      icon.setAttribute("class", "wi wi-cloudy");
     } else if (iconName === "partly-cloudy-day") {
       icon.setAttribute("class", "wi wi-day-cloudy");
     } else if (iconName === "partly-cloudy-night") {
@@ -45,8 +44,6 @@ request.onload = function() {
     } else {
       icon.setAttribute("class", "fas fa-times-circle");
     }
-
-    //weather.appendChild(temp);
     weather.appendChild(summary);
     summary.appendChild(icon);
   } else {
