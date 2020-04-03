@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Ferry Meadows",
+    "address": "Ham Lane, Peterborough, Cambridgeshire, PE2 5UU",
+    "type": "Country Park",
+    "goodforpoorweather": false,
+    "lat": 52.5628014,
+    "long": -0.3113059,
+    "description": 
+    "Ferry Meadows Country Park gives you the space to relax and to experience nature and the great outdoors. Whether cycling, fishing, walking, jogging, flying a kite, horse riding, riding on the Ferry meadows miniature train or just relaxing – Ferry Meadows is the place to go. If you really want to explore try orienteering, download our iApp trails or search for geocaches. Have a game of pitch and putt, enjoy a boat trip or try a range of water sports at Lakeside. There really is something for everybody. When in need of refreshment, stop off at one the cafés or enjoy a picnic or a barbeque in a beautiful setting."
+  },
+
+  {
+    "name": "Peterborough Cathedral",
+    "address": "The Cathedral Office, Minster Precincts, Peterborough, Cambridgeshire, PE1 1XS",
+    "type": "Cathedral",
+    "goodforpoorweather": true,
+    "lat": 52.5724835,
+    "long": -0.2413988,
+    "description": 
+    "With one of the most dramatic West Fronts in the country, an extraordinary creation of medieval architecture, it would be easy for the interior to be an anticlimax, but it is not. The dramatic Romanesque interior is little altered since its completion 800 years ago and the whole building has recently undergone cleaning and restoration following the dramatic fire of November 2001. The Cathedral is a great place to visit for all ages. You can download an interactive trail with augmented reality animations for mobile phones and tablets (search for Gamar Ltd in your app store, then Peterborough Cathedral Trail), explorer backpacks designed for smaller children and an activity book for older children."
+  },
+
+  {
+    "name": "Laserforce",
+    "address": "Brook Street, Peterborough, Cambridgeshire, PE1 1TU",
+    "type": "Lazer Games",
+    "goodforpoorweather": true,
+    "lat": 52.5760152,
+    "long": -0.240409,
+    "description": 
+    "Live action laser game. Two floor space station maze. Aliens, lasers and interactive targets. Lots of fun and excitement."
+  },
+
+  {
+      "name": "Bounce",
+      "address": "1 Wedgwood Way, Bretton, Peterborough, PE3 8AY",
+      "type": "Indoor Pursuits Centre",
+      "goodforpoorweather": true,
+      "lat": 52.6047047,
+      "long": -0.2780162,
+      "description": 
+      "Bounce is the 1st and original Indoor Trampoline Park in the UK! Launched on 31st May 2014, Bounce parks offer over 100 interconnected state of the art trampolines in over 20,000 sqft of entertainment space! Our Bounce parks consist of differing courts including our Main Arena, Dodgeball Court, Kids Court, Slam Dunk Area, Foam Pit, Airbag Jump, Touch Walls, Gladiator Pits and Tumble Tracks, as well as an arcade and party rooms!"
+  }
+]
