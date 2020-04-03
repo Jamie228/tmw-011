@@ -29,6 +29,6 @@ if (weatherDesc === "clear-day") {
 }
 
 weatherString.textContent =
-  "It is " + weatherStatus + " in Peterborough today!";
+  "It is " + weatherStatus + " in Peterborough today! Here are our top picks:";
 
 container.appendChild(weatherString);
