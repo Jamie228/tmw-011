@@ -8,7 +8,8 @@ GoPeterborough is a website that allows people coming to Peterborough to get acc
 A number of APIs will be included within this website in order to add extra functionality.
 ### DarkSky 
 A forecast and historical weather data API. This website is [Powered by DarkSky](https://darksky.net/poweredby/)
-*DarkSky is no longer open for registration, and will not be supported after December 2021*
+
+*DarkSky is no longer open for registration, and will not be supported after December 2021.*
 
 ## Plugins
 There are a few plugins that enable increased usability on this site, these are listed below:
