@@ -17,7 +17,7 @@ request.onload = function() {
     summary.textContent = parseFloat(celsiusTemp).toFixed(1) + "º" + " ";
 
     const iconName = data.currently.icon;
-    document.cookie = "weather=" + iconName;
+    document.cookie = "weather=" + data.currently.icon;
 
     const icon = document.createElement("i");
 

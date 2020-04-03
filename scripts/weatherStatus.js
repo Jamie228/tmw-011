@@ -1,4 +1,4 @@
-var weatherDesc = getCookie(weather);
+var weatherDesc = getCookie("weather");
 var weatherStatus;
 
 const container = document.getElementById("weather-status");
