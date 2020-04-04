@@ -62,17 +62,16 @@ request.onload = function() {
     summary.appendChild(icon);
 
     const weatherString = document.createElement("h1");
-    weatherString.textContent = "It is " + weatherDesc + " in Peterborough today! Here are our top picks:";
+    weatherString.textContent =
+      "It is " +
+      weatherDesc +
+      " in Peterborough today! Here are our top picks:";
     weatherDescContainer.appendChild(weatherString);
-    
-
   } else {
     const errorMessage = document.createElement("h2");
     errorMessage.textContent = "Error";
     weather.appendChild(errorMessage);
   }
-
-
 };
 
 request.send();
