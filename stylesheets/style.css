@@ -130,27 +130,27 @@ footer {
 .footer-social {
   font-size: 1.5em;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .footer-social a:link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .footer-social a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .footer-social a:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .footer-social a:active {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 @media (min-width: 600px) {
