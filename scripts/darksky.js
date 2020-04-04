@@ -20,68 +20,58 @@ request.onload = function() {
     const iconName = data.currently.icon;
     document.cookie = "weather=" + data.currently.icon;
 
+    var weatherDesc;
+
     const icon = document.createElement("i");
 
     if (iconName === "clear-day") {
       icon.setAttribute("class", "wi wi-day-sunny");
+      weatherDesc = "clear";
     } else if (iconName === "clear-night") {
       icon.setAttribute("class", "wi wi-night-clear");
+      weatherDesc = "clear";
     } else if (iconName === "rain") {
       icon.setAttribute("class", "wi wi-rain");
+      weatherDesc = "raining";
     } else if (iconName === "snow") {
       icon.setAttribute("class", "wi wi-snow");
+      weatherDesc = "snowing";
     } else if (iconName === "sleet") {
       icon.setAttribute("class", "wi wi-sleet");
+      weatherDesc = "sleeting";
     } else if (iconName === "wind") {
       icon.setAttribute("class", "wi wi-windy");
+      weatherDesc = "windy";
     } else if (iconName === "fog") {
       icon.setAttribute("class", "wi wi-fog");
+      weatherDesc = "foggy";
     } else if (iconName === "cloudy") {
       icon.setAttribute("class", "wi wi-cloudy");
+      weatherDesc = "cloudy";
     } else if (iconName === "partly-cloudy-day") {
       icon.setAttribute("class", "wi wi-day-cloudy");
+      weatherDesc = "partly cloudy";
     } else if (iconName === "partly-cloudy-night") {
       icon.setAttribute("class", "wi wi-night-partly-cloudy");
+      weatherDesc = "partly cloudy";
     } else {
       icon.setAttribute("class", "fas fa-times-circle");
+      weatherDesc = "difficult to determine the weather";
     }
     weather.appendChild(summary);
     summary.appendChild(icon);
+
+    const weatherString = document.createElement("h1");
+    weatherString.textContent = "It is " + weatherDesc + " in Peterborough today! Here are our top picks:";
+    weatherDescContainer.appendChild(weatherString);
+    
+
   } else {
     const errorMessage = document.createElement("h2");
     errorMessage.textContent = "Error";
     weather.appendChild(errorMessage);
   }
 
-  const weatherString = document.createElement("h1");
-  let weatherDesc;
-
-  if (iconName === "clear-day") {
-    weatherDesc = "clear";
-  } else if (iconName === "clear-night") {
-    weatherDesc = "clear";
-  } else if (iconName === "rain") {
-    weatherDesc = "raining";
-  } else if (iconName === "snow") {
-    weatherDesc = "snowing";
-  } else if (iconName === "sleet") {
-    weatherDesc = "sleeting";
-  } else if (iconName === "wind") {
-    weatherDesc = "windy";
-  } else if (iconName === "fog") {
-    weatherDesc = "foggy";
-  } else if (iconName === "cloudy") {
-    weatherDesc = "cloudy";
-  } else if (iconName === "partly-cloudy-day") {
-    weatherDesc = "partly cloudy";
-  } else if (iconName === "partly-cloudy-night") {
-    weatherDesc = "partly cloudy";
-  } else {
-    weatherDesc = "difficult to determine the weather";
-  }
-
-  weatherString.textContent = "It is " + weatherDesc + " in Peterborough today! Here are our top picks:";
-  weatherDescContainer.appendChild(weatherString);
 
 };
 
