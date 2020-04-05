@@ -9,6 +9,7 @@ var thingstododata = [
     goodforpoorweather: false,
     lat: 52.5628014,
     long: -0.3113059,
+    image: "ferrymeadows.jpg",
     description:
       "Ferry Meadows Country Park gives you the space to relax and to experience nature and the great outdoors. Whether cycling, fishing, walking, jogging, flying a kite, horse riding, riding on the Ferry meadows miniature train or just relaxing – Ferry Meadows is the place to go. If you really want to explore try orienteering, download our iApp trails or search for geocaches. Have a game of pitch and putt, enjoy a boat trip or try a range of water sports at Lakeside. There really is something for everybody. When in need of refreshment, stop off at one the cafés or enjoy a picnic or a barbeque in a beautiful setting."
   },
@@ -65,6 +66,7 @@ var thingstododata = [
     goodforpoorweather: false,
     lat: 52.5701659,
     long: -0.2408718,
+    image: "lido.jpg",
     description:
       "The Lido boasts three heated swimming pools, of which the main pool is 50m long, a teaching pool & paddling pool. We have sunbathing terraces and a large grass area within the facility. A vending service is provided for drinks and snacks."
   },
@@ -77,6 +79,7 @@ var thingstododata = [
     goodforpoorweather: false,
     lat: 52.5892333,
     long: -0.4089775,
+    image: "sacrewell.jpg",
     description:
       "Open all year round, there is something for everyone at Sacrewell Farm. Come and meet the friendly farm animals, visit the Shire Horse Centre, enjoy a bumpy tractor ride, and play in the indoor activity barn. Don’t miss your chance to discover our 18th century working Water Mill too."
   },
@@ -88,6 +91,7 @@ var thingstododata = [
     goodforpoorweather: false,
     lat: 52.5680372,
     long: -0.2492285,
+    image: "railworld.jpg",
     description:
       "The Railworld Wildlife Haven is testament to what can be achieved when volunteers, companies, groups and individuals work together for a common goal – Encouraging Environmental Awareness. Rev Richard Paten our founder chair and life long volunteer – brought the land over 30 years ago and we have raised funds to create what we have today.... We have never had any core funding, but we have won six major UK Environmental Awards and one Worldwide Award from Caterpillar."
   }
@@ -205,7 +209,10 @@ request.onload = function() {
         thingstodocontainer.appendChild(card);
 
         const img = document.createElement("img");
-        img.src = card.appendChild(img);
+        img.src = "images/thingstodo/" + item.image;
+        img.setAttribute("style", "width:100%;");
+
+        card.appendChild(img);
 
         const cardcontainer = document.createElement("div");
         cardcontainer.setAttribute("class", "card-container");
@@ -253,7 +260,10 @@ request.onload = function() {
         thingstodocontainer.appendChild(card);
 
         const img = document.createElement("img");
-        img.src = card.appendChild(img);
+        img.src = "images/thingstodo/" + item.image;
+        img.setAttribute("style", "width:100%;");
+        
+        card.appendChild(img);
 
         const cardcontainer = document.createElement("div");
         cardcontainer.setAttribute("class", "card-container");
