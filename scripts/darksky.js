@@ -312,13 +312,13 @@ request.onload = function() {
 
         card.appendChild(cardcontainer);
 
-        const titlecontainer = document.createElement("h4");
+        const titlecontainer = document.createElement("h3");
         const title = document.createElement("b");
         title.textContent = item.name;
         titlecontainer.appendChild(title);
         cardcontainer.appendChild(titlecontainer);
 
-        const typecontainer = document.createElement("h5");
+        const typecontainer = document.createElement("h4");
         const type = document.createElement("i");
         type.textContent = item.type;
         typecontainer.appendChild(type);
@@ -376,13 +376,13 @@ request.onload = function() {
 
         card.appendChild(cardcontainer);
 
-        const titlecontainer = document.createElement("h4");
+        const titlecontainer = document.createElement("h3");
         const title = document.createElement("b");
         title.textContent = item.name;
         titlecontainer.appendChild(title);
         cardcontainer.appendChild(titlecontainer);
 
-        const typecontainer = document.createElement("h5");
+        const typecontainer = document.createElement("h4");
         const type = document.createElement("i");
         type.textContent = item.type;
         typecontainer.appendChild(type);
