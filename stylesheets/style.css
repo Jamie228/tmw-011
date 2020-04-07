@@ -198,6 +198,14 @@ footer {
     float: right;
     display: block;
   }
+  .brand {
+    align-items: center;
+    grid-column: 1 / 2;
+    text-align: left;
+    font-family: "Righteous", cursive;
+    font-size: 1.8em;
+    padding-left: 10px;
+  }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
