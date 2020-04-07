@@ -270,7 +270,7 @@ request.onload = function() {
       " in Peterborough today! Here are our top picks:";
     weatherDescContainer.appendChild(weatherString);
 
-    if (celsiusTemp < 13) {
+    if (celsiusTemp < 10) {
       poorWeather = true;
     }
 
