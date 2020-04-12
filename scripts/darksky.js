@@ -408,7 +408,7 @@ request.onload = function() {
     }
   } else {
     const errorMessage = document.createElement("h2");
-    errorMessage.textContent = "Error";
+    errorMessage.textContent = "?";
     weather.appendChild(errorMessage);
   }
 };
