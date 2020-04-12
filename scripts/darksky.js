@@ -267,7 +267,7 @@ request.onload = function() {
     weatherString.textContent =
       "It is " +
       weatherDesc +
-      " in Peterborough today! Here are our top picks:";
+      " in Peterborough right now! Here are our top picks:";
     weatherDescContainer.appendChild(weatherString);
 
     if (celsiusTemp < 10) {
