@@ -198,7 +198,7 @@ request.open(
   true
 );
 
-request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+//request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
 request.onload = function() {
   var data = JSON.parse(this.response);
@@ -408,7 +408,7 @@ request.onload = function() {
     }
   } else {
     const errorMessage = document.createElement("h2");
-    errorMessage.textContent = "?";
+    errorMessage.textContent = "‽";
     weather.appendChild(errorMessage);
   }
 };
