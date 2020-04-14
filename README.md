@@ -16,6 +16,14 @@ A forecast and historical weather data API. This website is [Powered by DarkSky]
 
 _DarkSky is no longer open for registration, and will not be supported after December 2021._
 
+### Zomato
+
+An API from Zomato - the restaurant aggregator. Provides access to information about over 1.5 million restaurants across 10,000 cities globally.
+
+### MapQuest
+
+A free online web mapping service. The API provides multiple tools such as mapping, geocoding, directions, search, search ahead, static map, traffic, data manager, nominatim, and elevation.
+
 ## Plugins
 
 There are a few plugins that enable increased usability on this site, these are listed below:
