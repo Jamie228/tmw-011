@@ -100,13 +100,24 @@ html,body {
   grid-template-areas: "card";
 }
 
-.restaurant-cards {
-  max-width: 1200px;
+.rescard {
+  display: inline-block;
+  margin: auto;
+}
+
+.restaurant-card {
+  text-align: center;
   margin: 0 auto;
-  display: grid;
+  display: inline-block;
   gap: 1rem;
+  width: 100%;
   padding-bottom: 20px;
   grid-template-areas: "card";
+}
+
+.image {
+  max-width:100%;
+  height: auto;
 }
 
 .card {
@@ -154,10 +165,6 @@ html,body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 25.6px;
-}
-
-.restaurants {
-  max-width: 1200px;
 }
 
 footer {

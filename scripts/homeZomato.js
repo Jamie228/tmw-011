@@ -16,13 +16,12 @@ resrequest.onload = function () {
       restaurants[Math.floor(Math.random() * restaurants.length)];
 
     const card = document.createElement("div");
-    card.setAttribute("class", "card");
+    card.setAttribute("class", "card rescard");
 
     const cardcontainer = document.createElement("div");
     cardcontainer.setAttribute("class", "card-container");
 
     console.log(restaurant);
-    var resname = restaurant.name;
 
     const namecontainer = document.createElement("h3");
     const name = document.createElement("b");
@@ -31,10 +30,41 @@ resrequest.onload = function () {
 
     cardcontainer.appendChild(namecontainer);
 
+    const address = document.createElement("h4");
+    address.textContent = restaurant.restaurant.location.address;
+
+    cardcontainer.appendChild(address);
+
+    const map = document.createElement("img");
+    map.setAttribute("alt", "Map of " + restaurant.restaurant.name);
+    map.setAttribute("class", "image");
+    map.src =
+      "https://www.mapquestapi.com/staticmap/v5/map?key=alVHdXTGyfxmOIuSXLWTempLJiTPAjls&center=" +
+      restaurant.restaurant.location.latitude +
+      "," +
+      restaurant.restaurant.location.longitude +
+      "&size=500,500&locations=" +
+      restaurant.restaurant.location.latitude +
+      "," +
+      restaurant.restaurant.location.longitude +
+      "&zoom=14";
+
+    cardcontainer.appendChild(map);
+
+    const linkcontainer = document.createElement("p");
+
+    const link = document.createElement("a");
+    link.setAttribute("class", "btn");
+    link.target = "_blank";
+    link.setAttribute ("rel", "noopener");
+    link.href = restaurant.restaurant.url;
+    link.textContent = "Discover More on Zomato";
+
+    linkcontainer.appendChild(link);
+    cardcontainer.appendChild(linkcontainer);
 
     card.appendChild(cardcontainer);
     rescard.appendChild(card);
-
   }
 };
 
