@@ -95,7 +95,16 @@ html,body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  gap: 1rem;
+  padding-bottom: 20px;
+  grid-template-areas: "card";
+}
+
+.restaurant-cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
   padding-bottom: 20px;
   grid-template-areas: "card";
 }
@@ -139,6 +148,16 @@ html,body {
   background-color: white;
   color: rgb(0,0,0);
   border: 2px solid rgb(0, 110, 255);
+}
+
+.heading {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-size: 25.6px;
+}
+
+.restaurants {
+  max-width: 1200px;
 }
 
 footer {

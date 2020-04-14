@@ -217,47 +217,47 @@ request.onload = function() {
 
     if (iconName === "clear-day") {
       icon.setAttribute("class", "wi wi-day-sunny");
-      weatherDesc = "clear";
+      weatherDesc = "Clear";
       poorWeather = false;
     } else if (iconName === "clear-night") {
       icon.setAttribute("class", "wi wi-night-clear");
-      weatherDesc = "clear";
+      weatherDesc = "Clear";
       poorWeather = false;
     } else if (iconName === "rain") {
       icon.setAttribute("class", "wi wi-rain");
-      weatherDesc = "raining";
+      weatherDesc = "Raining";
       poorWeather = true;
     } else if (iconName === "snow") {
       icon.setAttribute("class", "wi wi-snow");
-      weatherDesc = "snowing";
+      weatherDesc = "Snowing";
       poorWeather = true;
     } else if (iconName === "sleet") {
       icon.setAttribute("class", "wi wi-sleet");
-      weatherDesc = "sleeting";
+      weatherDesc = "Sleeting";
       poorWeather = true;
     } else if (iconName === "wind") {
       icon.setAttribute("class", "wi wi-windy");
-      weatherDesc = "windy";
+      weatherDesc = "Windy";
       poorWeather = true;
     } else if (iconName === "fog") {
       icon.setAttribute("class", "wi wi-fog");
-      weatherDesc = "foggy";
+      weatherDesc = "Foggy";
       poorWeather = true;
     } else if (iconName === "cloudy") {
       icon.setAttribute("class", "wi wi-cloudy");
-      weatherDesc = "cloudy";
+      weatherDesc = "Cloudy";
       poorWeather = false;
     } else if (iconName === "partly-cloudy-day") {
       icon.setAttribute("class", "wi wi-day-cloudy");
-      weatherDesc = "partly cloudy";
+      weatherDesc = "Partly Cloudy";
       poorWeather = false;
     } else if (iconName === "partly-cloudy-night") {
       icon.setAttribute("class", "wi wi-night-partly-cloudy");
-      weatherDesc = "partly cloudy";
+      weatherDesc = "Partly Cloudy";
       poorWeather = false;
     } else {
       icon.setAttribute("class", "fas fa-times-circle");
-      weatherDesc = "difficult to determine the weather";
+      weatherDesc = "Difficult to Determine the Weather";
       poorWeather = true;
     }
     weather.appendChild(summary);
@@ -267,7 +267,7 @@ request.onload = function() {
     weatherString.textContent =
       "It is " +
       weatherDesc +
-      " in Peterborough right now! Here are our top picks:";
+      " in Peterborough Right Now! Here Are Our Top Picks:";
     weatherDescContainer.appendChild(weatherString);
 
     if (celsiusTemp < 10) {
