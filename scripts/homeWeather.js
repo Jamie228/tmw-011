@@ -1,4 +1,5 @@
-const weather = document.getElementById("weather");
+$(document).ready(function() {
+  const weather = document.getElementById("weather");
 const weatherDescContainer = document.getElementById("weather-status");
 
 var thingstododata = [
@@ -414,3 +415,5 @@ request.onload = function() {
 };
 
 request.send();
+
+});
