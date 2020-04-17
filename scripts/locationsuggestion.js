@@ -230,7 +230,7 @@ function suggest(position) {
   closestLink.textContent = closestItem.name;
   closestLink.href = closestItem.link;
   closestText.textContent =
-    "The closest activity to you is " + min.toFixed(1) + "km away and is: ";
+    "The closest activity to you is " + (min / 1000).toFixed(1) + "km away and is: ";
   closestText.appendChild(closestLink);
   closestContainer.appendChild(closestText);
 }
