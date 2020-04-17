@@ -188,8 +188,8 @@ $(document).ready(function () {
 
   var distances = [];
 
-  if (window.navigator.geolocation) {
-    window.navigator.geolocation.getCurrentPosition(suggest());
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(suggest());
   }
 
   function suggest(position) {
