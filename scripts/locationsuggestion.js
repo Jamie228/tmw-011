@@ -188,13 +188,16 @@ $(document).ready(function () {
 
   var distances = [];
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(suggest());
+  function initCoords() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(suggest());
+    } else {
+    }
   }
 
   function suggest(position) {
     var R = 6371e3;
-    var φ1 = (position.coords.latitude).toRadians();
+    var φ1 = position.coords.latitude.toRadians();
 
     thingstododata.forEach((item) => {
       var φ2 = item.lat.toRadians();
