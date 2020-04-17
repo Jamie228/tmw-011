@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
   var thingstododata = [
     {
       name: "Ferry Meadows",
@@ -222,4 +222,3 @@ $(document).ready(function () {
   Number.prototype.toRadians = function () {
     return (this * Math.PI) / 180;
   };
-});
