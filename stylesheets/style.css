@@ -171,6 +171,9 @@ html,body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.8em;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
 }
 
 footer {

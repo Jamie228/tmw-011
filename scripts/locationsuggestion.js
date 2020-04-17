@@ -195,17 +195,15 @@ function getLocation() {
 }
 
 function suggest(position) {
-
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-
-  var R = 6371e3;
-  var φ1 = position.coords.latitude.toRadians();
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
 
   thingstododata.forEach((item) => {
-    var φ2 = item.lat.toRadians();
-    var Δφ = (item.lat - position.coords.latitude).toRadians();
-    var Δλ = (item.long - position.coords.longitude).toRadians();
+    var R = 6371e3;
+    var φ1 = toRadians(position.coords.latitude);
+    var φ2 = toRadians(item.lat);
+    var Δφ = toRadians(item.lat - position.coords.latitude);
+    var Δλ = toRadians(item.long - position.coords.longitude);
     var a =
       Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
       Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
@@ -218,6 +216,9 @@ function suggest(position) {
 
   var min = Math.min(...distances);
 
+  console.log(min);
+  console.log(distances);
+
   var disindex = distances.indexOf(min);
   var closestItem = thingstododata[disindex];
 
@@ -228,11 +229,13 @@ function suggest(position) {
   const closestLink = document.createElement("a");
   closestLink.textContent = closestItem.name;
   closestLink.href = closestItem.link;
-  closestText.textContent = "The closest activity to you is: ";
+  closestText.textContent =
+    "The closest activity to you is " + min.toFixed(1) + "km away and is: ";
   closestText.appendChild(closestLink);
   closestContainer.appendChild(closestText);
 }
 
-Number.prototype.toRadians = function () {
-  return (this * Math.PI) / 180;
-};
+function toRadians(foo) {
+  var pi = Math.PI;
+  return foo * (pi / 180);
+}
