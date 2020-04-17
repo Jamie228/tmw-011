@@ -221,7 +221,16 @@ function suggest(position) {
   var disindex = distances.indexOf(min);
   var closestItem = thingstododata[disindex];
 
-  console.log(closestItem);
+  document.cookie = "closestItem=" + closestItem.name;
+
+  const closestContainer = document.getElementById("closestPlace");
+  const closestText = document.createElement("h1");
+  const closestLink = document.createElement("a");
+  closestLink.textContent = closestItem.name;
+  closestLink.href = closestItem.link;
+  closestText.textContent = "The closest activity to you is: ";
+  closestText.appendChild(closestLink);
+  closestContainer.appendChild(closestText);
 }
 
 Number.prototype.toRadians = function () {
