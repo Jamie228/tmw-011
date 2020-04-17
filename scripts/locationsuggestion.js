@@ -198,9 +198,10 @@ function suggest(position) {
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
 
+  var R = 6371e3;
+  var φ1 = toRadians(position.coords.latitude);
+
   thingstododata.forEach((item) => {
-    var R = 6371e3;
-    var φ1 = toRadians(position.coords.latitude);
     var φ2 = toRadians(item.lat);
     var Δφ = toRadians(item.lat - position.coords.latitude);
     var Δλ = toRadians(item.long - position.coords.longitude);
