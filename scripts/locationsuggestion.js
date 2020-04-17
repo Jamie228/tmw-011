@@ -195,8 +195,6 @@ function getLocation() {
 }
 
 function suggest(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
 
   var R = 6371e3;
   var φ1 = toRadians(position.coords.latitude);
@@ -216,9 +214,6 @@ function suggest(position) {
   });
 
   var min = Math.min(...distances);
-
-  console.log(min);
-  console.log(distances);
 
   var disindex = distances.indexOf(min);
   var closestItem = thingstododata[disindex];
