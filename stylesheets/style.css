@@ -171,9 +171,11 @@ html,body {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.8em;
-  border-color: black;
+  border-color: rgb(0, 110, 255);
   border-width: 3px;
   border-style: solid;
+  border-radius: 4px;
+  margin: 8px 8px 8px 8px;
 }
 
 footer {
