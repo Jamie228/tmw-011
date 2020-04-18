@@ -168,6 +168,7 @@ html,body {
 }
 
 #closestPlace {
+  background-color: rgb(0, 110, 255);
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.8em;
@@ -176,6 +177,10 @@ html,body {
   border-style: solid;
   border-radius: 4px;
   margin: 8px 8px 8px 8px;
+}
+
+#closestPlace a:link {
+  color: black;
 }
 
 footer {
