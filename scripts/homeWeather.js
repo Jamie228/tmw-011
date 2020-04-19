@@ -2,6 +2,7 @@ $(document).ready(function () {
   const weather = document.getElementById("weather");
   const weatherDescContainer = document.getElementById("weather-status");
 
+  //JSON array of things to do
   var thingstododata = [
     {
       name: "Ferry Meadows",
@@ -193,13 +194,13 @@ $(document).ready(function () {
 
   var request = new XMLHttpRequest();
 
+  //Open request
   request.open(
     "GET",
     "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2a01f2d4674c638b7adbdbd27e5eb19a/52.5786,-0.2412",
     true
   );
 
-  //request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
   request.onload = function () {
     var data = JSON.parse(this.response);
@@ -215,7 +216,7 @@ $(document).ready(function () {
       var weatherDesc;
 
       const icon = document.createElement("i");
-
+      //Set weather icon
       if (iconName === "clear-day") {
         icon.setAttribute("class", "wi wi-day-sunny");
         weatherDesc = "Clear";
@@ -264,6 +265,7 @@ $(document).ready(function () {
       weather.appendChild(summary);
       summary.appendChild(icon);
 
+      //State current weather based on above IF statement
       const weatherString = document.createElement("h1");
       weatherString.textContent =
         "It is " +
@@ -271,14 +273,17 @@ $(document).ready(function () {
         " in Peterborough Right Now! Here Are Our Top Picks:";
       weatherDescContainer.appendChild(weatherString);
 
+      //Another parameter for poor weather
       if (celsiusTemp < 10) {
         poorWeather = true;
       }
 
       var thingstodo = thingstododata;
       var listofthings = [];
-
+      
       if (poorWeather === true) {
+        //If the weather is poor cycle through things to do array and create a new array with only the items that are 
+        //suitable for the current weather
         thingstodo.forEach((thing) => {
           if (thing.goodforpoorweather === true) {
             listofthings.push(thing);
@@ -286,6 +291,8 @@ $(document).ready(function () {
           }
         });
 
+        //Pull an item at random from this array, assign it to a variable and then delete that item from the array so it 
+        //cannot be selected again
         var item1 =
           listofthings[Math.floor(Math.random() * listofthings.length)];
         var index = listofthings.indexOf(item1);
@@ -301,8 +308,10 @@ $(document).ready(function () {
 
         const thingstodocontainer = document.getElementById("thingstodo");
 
+        //Assign three randomly selected items to the finalList array
         var finalList = [item1, item2, item3];
 
+        //FOr each item in the new array, create a card and append it to the document
         finalList.forEach((item) => {
           const card = document.createElement("div");
           card.setAttribute("class", "card");

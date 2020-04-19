@@ -1,3 +1,4 @@
+//Array of JSON objects
 var thingstododata = [
   {
     name: "Ferry Meadows",
@@ -185,12 +186,16 @@ var thingstododata = [
   },
 ];
 
+//Instantiate array
 var distances = [];
 
 function getLocation() {
+  //Does browser have geolocation?
   if (navigator.geolocation) {
+    //If yes get location
     navigator.geolocation.getCurrentPosition(suggest, unavilable);
   } else {
+    //If no create object to report error
     const closestContainer = document.getElementById("closestPlace");
     const closestText = document.createElement("h1");
     closestText.textContent =
@@ -208,9 +213,11 @@ function unavilable() {
 }
 
 function suggest(position) {
-
+  //Log coords to console - TESTING
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
+
+  //Begin to calculate distance between each item and the user using the Haversine Formula.
 
   var R = 6371e3;
   var φ1 = toRadians(position.coords.latitude);
@@ -226,16 +233,21 @@ function suggest(position) {
 
     var d = R * c;
 
+    //Once distance calculated, push into distance array
     distances.push(d);
   });
 
+  //Use spread operator to obtain smallest value in distance array - its key should have the same key as the closest item in the activities JSON array
   var min = Math.min(...distances);
 
+  //Get index of this item and then assign the item with the same index in the thingstodo array to a variable
   var disindex = distances.indexOf(min);
   var closestItem = thingstododata[disindex];
 
+  //Add to cookie
   document.cookie = "closestItem=" + closestItem.name;
 
+  //Create object on page to display this information
   const closestContainer = document.getElementById("closestPlace");
   const closestText = document.createElement("h1");
   const closestLink = document.createElement("a");
@@ -249,6 +261,7 @@ function suggest(position) {
   closestContainer.appendChild(closestText);
 }
 
+//Function to convert degrees to radians for Haversine Formula
 function toRadians(foo) {
   var pi = Math.PI;
   return foo * (pi / 180);

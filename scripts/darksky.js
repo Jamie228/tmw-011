@@ -2,29 +2,34 @@ $(document).ready(function () {
   const weather = document.getElementById("weather");
   var weatherrequest = new XMLHttpRequest();
 
+  //Send request to DarkSky
   weatherrequest.open(
     "GET",
     "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2a01f2d4674c638b7adbdbd27e5eb19a/52.5786,-0.2412",
     true
   );
 
-  //request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-
   weatherrequest.onload = function () {
     var data = JSON.parse(this.response);
     if (weatherrequest.status >= 200 && weatherrequest.status < 400) {
+
+      //Converts farenheit to celsius
       const celsiusTemp = ((data.currently.temperature - 32) * 5) / 9;
 
+      //Creates temperature h2 element and appends degree symbol
       const summary = document.createElement("h2");
       summary.textContent = parseFloat(celsiusTemp).toFixed(1) + "º" + " ";
 
+      //Sets variable to icon name and passes this to a cookie
       const iconName = data.currently.icon;
       document.cookie = "weather=" + data.currently.icon;
 
       var weatherDesc;
 
+      //Create i element for icon
       const icon = document.createElement("i");
 
+      //Assign icon based on icon property received
       if (iconName === "clear-day") {
         icon.setAttribute("class", "wi wi-day-sunny");
         weatherDesc = "Clear";
@@ -70,6 +75,7 @@ $(document).ready(function () {
         weatherDesc = "Difficult to Determine the Weather";
         poorWeather = true;
       }
+      //Append both to website
       weather.appendChild(summary);
       summary.appendChild(icon);
 

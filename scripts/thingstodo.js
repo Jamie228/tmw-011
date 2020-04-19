@@ -187,6 +187,7 @@ var thingstododata = [
 
 const cardscontainer = document.getElementById("allthingstodo");
 
+//Loop to create a card for each item in above JSON array
 thingstododata.forEach((item) => {
   const weathersuggesticon = document.createElement("i");
 
