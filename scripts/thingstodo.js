@@ -222,6 +222,12 @@ var thingstododata = [
       address.textContent = item.address;
       innercardcontiner.appendChild(address);
 
+      const button = document.createElement("a");
+      button.setAttribute("class", "btn");
+      button.href = item.link;
+      button.textContent = "Discover " + item.name;
+      innercardcontiner.appendChild(button);
+
       card.appendChild(innercardcontiner);
       cardscontainer.appendChild(card);
   });
