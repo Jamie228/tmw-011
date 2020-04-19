@@ -189,13 +189,25 @@ var distances = [];
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(suggest);
+    navigator.geolocation.getCurrentPosition(suggest, unavilable);
   } else {
+    const closestContainer = document.getElementById("closestPlace");
+    const closestText = document.createElement("h1");
+    closestText.textContent =
+      "The closest activity to you cannot be determined right now!";
+    closestContainer.appendChild(closestText);
   }
 }
 
-function suggest(position) {
+function unavilable() {
+  const closestContainer = document.getElementById("closestPlace");
+  const closestText = document.createElement("h1");
+  closestText.textContent =
+    "The closest activity to you cannot be determined right now!";
+  closestContainer.appendChild(closestText);
+}
 
+function suggest(position) {
   var R = 6371e3;
   var φ1 = toRadians(position.coords.latitude);
 
@@ -226,7 +238,9 @@ function suggest(position) {
   closestLink.textContent = closestItem.name;
   closestLink.href = closestItem.link;
   closestText.textContent =
-    "The closest activity to you is " + (min / 1000).toFixed(1) + "km away and is: ";
+    "The closest activity to you is " +
+    (min / 1000).toFixed(1) +
+    "km away and is: ";
   closestText.appendChild(closestLink);
   closestContainer.appendChild(closestText);
 }
