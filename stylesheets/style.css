@@ -167,6 +167,34 @@ html,body {
   font-size: 25.6px;
 }
 
+.thingstodotitle {
+  font-family: 'Righteous', cursive;
+  text-align: center;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 0.5px;
+
+}
+
+.background-tint {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+
+.flagfen {
+  background-image: url(../images/thingstodo/flagfen.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.subtitle {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
 #closestPlace {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
