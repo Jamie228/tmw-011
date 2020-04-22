@@ -6,6 +6,13 @@ A website for 'GoPeterborough'. Designed for Element 011 of The Mobile Web (Leve
 
 GoPeterborough is a website that allows people coming to Peterborough to get access to local information that might be of interest to them.
 
+## Device APIs
+The following device level APIs have been implemented to allow further interaction with the site.
+### Geolocation
+The device's location is obtained to provide better suggestions to the user.
+### Phone
+It's possible to place phone calls directly from the browser to allow users to contact certain vendors and activity providers to enable better ease of use.
+
 ## APIs
 
 A number of APIs will be included within this website in order to add extra functionality.
