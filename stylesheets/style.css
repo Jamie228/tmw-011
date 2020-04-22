@@ -229,6 +229,26 @@ html,body {
   position: relative;
 }
 
+.queensgate {
+  background-image: url(../images/thingstodo/queensgate.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.lido {
+  background-image: url(../images/thingstodo/lido.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
 /* LOCATION HEADERS END  */
 
 .subtitle {
