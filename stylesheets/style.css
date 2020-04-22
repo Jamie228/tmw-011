@@ -209,6 +209,26 @@ html,body {
   position: relative;
 }
 
+.laserforce {
+  background-image: url(../images/thingstodo/laserforce.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bounce {
+  background-image: url(../images/thingstodo/bounce.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
 /* LOCATION HEADERS END  */
 
 .subtitle {
