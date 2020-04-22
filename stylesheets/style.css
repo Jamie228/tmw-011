@@ -177,6 +177,8 @@ html,body {
   background-blend-mode: multiply;
 }
 
+/* LOCATION HEADERS  */
+
 .flagfen {
   background-image: url(../images/thingstodo/flagfen.jpg);
   padding-top: 15px;
@@ -186,6 +188,28 @@ html,body {
   background-position: center;
   position: relative;
 }
+
+.ferrymeadows {
+  background-image: url(../images/thingstodo/ferrymeadows.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cathedral {
+  background-image: url(../images/thingstodo/cathedral.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* LOCATION HEADERS END  */
 
 .subtitle {
   font-family: 'Quicksand', sans-serif;
