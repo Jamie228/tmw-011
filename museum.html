@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!--JavaScript-->
+    <link rel="text/javascript" href="scripts/main.js">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Righteous&display=swap" rel="stylesheet">
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/9477a9faa7.js" crossorigin="anonymous"></script>
+
+    <!--Slick.css-->
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+
+    <!--Weather Icon-->
+    <link rel="stylesheet" href="stylesheets/weather-icons.min.css">
+
+    <!--MapQuest-->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
+    <meta name="description"
+        content="A website for GoPeterborough, with things to do in and information about the city of Peterborough.">
+    <meta name="author" content="Jamie Hamilton">
+
+    <title>Museum and Art Gallery - GoPeterborough</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            L.mapquest.key = 'alVHdXTGyfxmOIuSXLWTempLJiTPAjls';
+
+            var map = L.mapquest.map('map', {
+                center: [52.5717777, -0.2458579],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 12
+            });
+
+            L.mapquest.textMarker([52.5717777, -0.2458579], {
+                text: 'Museum',
+                position: 'bottom',
+                type: 'marker',
+                icon: {
+                    size: 'md',
+                    primaryColor: '#000000'
+                }
+            }).addTo(map);
+
+            map.addControl(L.mapquest.control());
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="brand">GoPeterborough!</h1>
+        <div class="weather" id="weather"></div>
+    </header>
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="thingstodo.html">Things to Do</a>
+        <a href="placestoeat.html">Places to Eat</a>
+        <a href="whatson.html">What's On</a>
+        <a href="pboinfo.html">Peterborough Info</a>
+        <a href="javascript:void(0);" class="icon" onclick="topnavExpand()">
+            <i class="fas fa-bars"></i> MENU
+        </a>
+    </nav>
+
+    <div class="thingstodotitle museum background-tint">
+        <h1>Peterborough Museum and Art Gallery</h1>
+    </div>
+
+    <div class="card weathersuggest">
+        <h1><i class="wi wi-rain-mix"></i> <span style="font-family: 'Righteous', cursive;">GoPeterborough</span>
+            recommends this activity for bad weather, but can be enjoyed no matter what!</h1>
+    </div>
+
+    <h3 class="subtitle"><i>Museum</i><br /><br />Priestgate, Peterborough, Cambridgeshire, PE1 1LF<br>
+        <p><i class="fas fa-phone"></i> <a href="tel:01733 864663">01733 864663</a></p>
+        <p><a class="btn" href="https://vivacity.org/heritage-venues/peterborough-museum-art-gallery/">Visit Their
+                Website!</a>
+        </p>
+    </h3>
+
+    <div class="about-grid">
+        <section style="height: auto; padding: 0.5rem">
+            <h1 class="about">About...</h1>
+            <p>Located in one of the city's most historic buildings, Peterborough Museum has a wealth of stories to
+                fascinate and enthral all the family. There are some amazing objects and interactive displays for all
+                ages. The collections comprise over 200,000 items of great national and international importance.</p>
+            <p>Explore the historic building and its story: from private house, to hospital and museum. Go inside the
+                original Victorian Operating Theatre to learn about the grisly history of surgery.</p>
+            <p>Visit an underwater world! See the internationally important collection of fossils of Jurassic
+                sea-monsters and find out more about the creatures that swam in our prehistoric seas over 150 million
+                years ago.</p>
+            <p>Discover the story of the world's first prisoner of war camp, built 200 years ago during the Napoleonic
+                Wars. See inside one of the cells and view the incredibly intricate items made by the French prisoners.
+            </p>
+            <p>Learn about the story of Peterborough, from prehistory to the present. Come face-to-face with Britain's
+                oldest murder victim, see Roman and Saxon treasures, look inside a Victorian railway cottage and clock
+                in to find out what Peterborough companies have made over the last century.</p>
+        </section>
+        <div style="padding: 0.5rem;">
+            <h1 class="about">Where is it?</h1>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; GoPeterborough 2020</p>
+        <p class="footer-social"><a href=""><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                href=""><i class="fab fa-twitter-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><i
+                    class="fab fa-instagram"></i></a></p>
+        <p><a class="footer-link" target="_blank" rel="noreferrer" href="http://darksky.net/poweredby">Powered by
+                DarkSky</a></p>
+    </footer>
+
+    <!--Scripts-->
+
+    <script src="scripts/jQuery.min.js"></script>
+    <script src="scripts/topnav.js"></script>
+    <script src="scripts/darksky.js"></script>
+</body>
+
+</html>

@@ -249,6 +249,75 @@ html,body {
   position: relative;
 }
 
+.sacrewell {
+  background-image: url(../images/thingstodo/sacrewell.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.railworld {
+  background-image: url(../images/thingstodo/railworld.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.centralpark {
+  background-image: url(../images/thingstodo/centralpark.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.elton {
+  background-image: url(../images/thingstodo/eltonhall.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.museum {
+  background-image: url(../images/thingstodo/museum.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.longthorpe {
+  background-image: url(../images/thingstodo/longthorpe.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.keytheatre {
+  background-image: url(../images/thingstodo/keytheatre.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 /* LOCATION HEADERS END  */
 
 .subtitle {
