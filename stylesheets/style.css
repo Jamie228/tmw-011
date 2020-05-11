@@ -164,6 +164,17 @@ html,body {
   font-size: 25.6px;
 }
 
+.pageheading {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-size: 25.6px;
+}
+
+.bigheading {
+  font-family: 'Righteous', cursive;
+  text-align: center;
+}
+
 .thingstodotitle {
   font-family: 'Righteous', cursive;
   text-align: center;
@@ -178,6 +189,26 @@ html,body {
 }
 
 /* LOCATION HEADERS  */
+
+.things {
+  background-image: url(../images/carousel/cathedral.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.whatson {
+  background-image: url(../images/carousel/buttercross.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
 .flagfen {
   background-image: url(../images/thingstodo/flagfen.jpg);

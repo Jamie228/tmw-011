@@ -28,7 +28,7 @@
         content="A website for GoPeterborough, with things to do in and information about the city of Peterborough.">
     <meta name="author" content="Jamie Hamilton">
 
-    <title>GoPeterborough Home</title>
+    <title>What's On - GoPeterborough</title>
 </head>
 
 <body>
@@ -37,35 +37,24 @@
         <div class="weather" id="weather"></div>
     </div>
     <nav class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="thingstodo.html">Things to Do</a>
         <a href="placestoeat.html">Places to Eat</a>
-        <a href="whatson.html">What's On</a>
+        <a href="whatson.html" class="active">What's On</a>
         <a href="pboinfo.html">Peterborough Info</a>
         <a href="javascript:void(0);" class="icon" onclick="topnavExpand()">
             <i class="fas fa-bars"></i> MENU
         </a>
     </nav>
 
-    <div class="carousel">
-        <div><img class="carousel-image" src="images/carousel/cathedral.jpg"
-                alt="Front of Peterborough Cathedral on a fairly bright day, with a few people walking around the front of the building. Trees to the left and right of the cathedral.">
-        </div>
-        <div><img class="carousel-image" src="images/carousel/queensgate.jpg"
-                alt="A photo taken inside of Queensgate Shopping Centre on the first floor looking over the balcony. Shops are seen on the left and right of the shot with a large number of people walking throughout the centre.">
-        </div>
-        <div><img class="carousel-image" src="images/carousel/buttercross.jpg" alt="City centre with distant view of cathedral at night time"></div>
+    <div class="thingstodotitle whatson background-tint">
+        <h1>What's On?</h1>
+        <h2 class="thingstodotitle">Powered by Ticketmaster</h2>
     </div>
 
-    <div id="weather-status"></div>
+    <br/>
 
-    <div id="thingstodo" class="cards">
-    </div>
-
-    <h2 class="heading">Eating Out? Try This One:</h2>
-
-    <div class="restaurants restaurant-card" id="restaurantcard">
-    </div>
+    <div id="whatsoncards" class="cards"></div>
 
     <footer>
         <p>&copy; GoPeterborough 2020</p>
@@ -77,26 +66,10 @@
     </footer>
 
     <!--Scripts-->
-
     <script src="scripts/jQuery.min.js"></script>
     <script src="scripts/topnav.js"></script>
-    <script src="slick/slick.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 2000
-            });
-        });
-    </script>
-    <script type="text/javascript" src="scripts/homeFood.js"></script>
-    <script type="text/javascript" src="scripts/homeWeather.js"></script>
+    <script src="scripts/darksky.js"></script>
+    <script src="scripts/whatson.js"></script>
 
 </body>
 
