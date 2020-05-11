@@ -31,6 +31,10 @@ An API from Zomato - the restaurant aggregator. Provides access to information a
 
 A free online web mapping service. The API provides multiple tools such as mapping, geocoding, directions, search, search ahead, static map, traffic, data manager, nominatim, and elevation.
 
+### Ticketmaster
+
+An API to obtain details about upcoming concerts, shows and events in Peterborough.
+
 ## Plugins
 
 There are a few plugins that enable increased usability on this site, these are listed below:
