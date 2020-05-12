@@ -199,7 +199,17 @@ html,body {
   background-blend-mode: multiply;
 }
 
-/* LOCATION HEADERS  */
+/* PAGE HEADERS AND BANNERS  */
+
+.pboinfo {
+  background-image: url(../images/carousel/buttercross2.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
 .things {
   background-image: url(../images/carousel/cathedral.jpg);
@@ -360,7 +370,7 @@ html,body {
   background-position: center;
   position: relative;
 }
-/* LOCATION HEADERS END  */
+/* PAGE HEADERS AND BANNERS END  */
 
 .subtitle {
   font-family: 'Quicksand', sans-serif;
@@ -382,6 +392,33 @@ html,body {
   border-style: solid;
   border-radius: 4px;
   margin: 8px 8px;
+}
+
+.centralcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "card";
+}
+
+.infocard {
+  margin: 8px;
+  padding: 2px;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-size: 0.8em;
+  border-color: rgb(0, 110, 255);
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.infocard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 #closestPlace {
