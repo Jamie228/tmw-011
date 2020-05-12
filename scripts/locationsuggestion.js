@@ -259,6 +259,10 @@ function suggest(position) {
     "km away and is: ";
   closestText.appendChild(closestLink);
   closestContainer.appendChild(closestText);
+  closestContainer.className = "card";
+
+  const trigger = document.getElementById("getClosest");
+  trigger.onclick = "";
 }
 
 //Function to convert degrees to radians for Haversine Formula

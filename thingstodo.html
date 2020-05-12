@@ -33,7 +33,7 @@
     <title>Things To Do - GoPeterborough</title>
 </head>
 
-<body href="javascript:void(0)"  onload = "getLocation()">
+<body>
     <header class="header">
         <h1 class="brand">GoPeterborough!</h1>
         <div class="weather" id="weather"></div>
@@ -52,10 +52,12 @@
     <div class="thingstodotitle things background-tint">
         <h1>Things to Do</h1>
     </div>
-    
-    <div id="closestPlace" class="card"></div>
 
-    <h1 class="heading">Not a Fan? Try One of These:</h1>
+    <p style="text-align: center;"><button id="getClosest" class="btn" onclick="getLocation()">Find Closest Activity</button></p>
+    
+    <div id="closestPlace" class="cardhidden"></div>
+
+    <h1 class="heading">Try One of our <b id="activityAmount"></b> Activities!</h1>
 
     <div id="allthingstodo" class="cards"></div>
 
