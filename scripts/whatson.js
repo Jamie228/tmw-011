@@ -12,8 +12,7 @@ $(document).ready(function () {
   tmreq.onload = function () {
     var tmdata = JSON.parse(this.response);
     if (tmreq.status >= 200 && tmreq.status < 400) {
-
-        //FOREACH event returned from request
+      //FOREACH event returned from request
       tmdata._embedded.events.forEach((event) => {
         //Create cards
         const card = document.createElement("div");
@@ -49,7 +48,7 @@ $(document).ready(function () {
         const btn = document.createElement("a");
         btn.setAttribute("class", "btn");
         btn.href = event.url;
-        btn.textContent = "View on Ticketmaster"
+        btn.textContent = "View on Ticketmaster";
         btncontainer.appendChild(btn);
         cardcontainer.appendChild(btncontainer);
 

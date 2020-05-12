@@ -201,7 +201,6 @@ $(document).ready(function () {
     true
   );
 
-
   request.onload = function () {
     var data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
@@ -280,9 +279,9 @@ $(document).ready(function () {
 
       var thingstodo = thingstododata;
       var listofthings = [];
-      
+
       if (poorWeather === true) {
-        //If the weather is poor cycle through things to do array and create a new array with only the items that are 
+        //If the weather is poor cycle through things to do array and create a new array with only the items that are
         //suitable for the current weather
         thingstodo.forEach((thing) => {
           if (thing.goodforpoorweather === true) {
@@ -291,7 +290,7 @@ $(document).ready(function () {
           }
         });
 
-        //Pull an item at random from this array, assign it to a variable and then delete that item from the array so it 
+        //Pull an item at random from this array, assign it to a variable and then delete that item from the array so it
         //cannot be selected again
         var item1 =
           listofthings[Math.floor(Math.random() * listofthings.length)];

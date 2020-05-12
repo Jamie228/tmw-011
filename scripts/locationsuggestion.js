@@ -262,7 +262,7 @@ function suggest(position) {
   closestContainer.className = "card";
 
   const trigger = document.getElementById("getClosest");
-  trigger.onclick = "";
+  trigger.style = "display: none;";
 }
 
 //Function to convert degrees to radians for Haversine Formula
