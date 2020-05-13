@@ -34,6 +34,12 @@ $(document).ready(function () {
             const uv = document.createElement("h3");
             uv.textContent = "UV Index: " + darkskydata.currently.uvIndex;
             weathercard.appendChild(uv);
+            const pressure = document.createElement("h3");
+            pressure.textContent = "Pressure: " + darkskydata.currently.pressure + " mb";
+            weathercard.appendChild(pressure);
+            const cloudcover = document.createElement("h3");
+            cloudcover.textContent = "Cloud Cover: " + darkskydata.currently.cloudCover * 100 + "%";
+            weathercard.appendChild(cloudcover);
         } else {}
     };
     darkskyrequest.send();
@@ -49,7 +55,7 @@ $(document).ready(function () {
         var airqualdata = JSON.parse(this.response);
         if (airqualityrequest.status >= 200 && airqualityrequest.status < 400) {
             const airqualcard = document.getElementById("airquality");
-            const aqistatus = document.createElement("h3");
+            const aqistatus = document.createElement("h2");
             aqistatus.textContent =
                 "Daily Air Quality Index (DAQI): " +
                 airqualdata.data.indexes.gbr_defra.aqi +
@@ -64,10 +70,11 @@ $(document).ready(function () {
             for (x in airqualdata.data.pollutants) {
                 if (x == dompoll) {
                     dompoll = airqualdata.data["pollutants"][x]["full_name"];
+                    var dompollquant = airqualdata.data["pollutants"][x]["concentration"]["value"] + airqualdata.data["pollutants"][x]["concentration"]["units"];
                     var dompolldesc = airqualdata.data["pollutants"][x]["sources_and_effects"]["effects"];
                 }
             }
-            dominant_pollutant.textContent = "Dominant Pollutant: " + dompoll;
+            dominant_pollutant.textContent = "Dominant Pollutant: " + dompoll + " (" + dompollquant + ")";
             airqualcard.appendChild(dominant_pollutant);
 
             const polldesc = document.createElement("h3");
@@ -92,7 +99,50 @@ $(document).ready(function () {
                     airqualdata.data["pollutants"][x]["concentration"]["units"];
                 airqualcard.appendChild(poll);
             }
+
+            const advicecont = document.createElement("h2");
+            const advicehead = document.createElement("u");
+            advicehead.textContent = "Advice for Groups:";
+            advicecont.appendChild(advicehead);
+            airqualcard.appendChild(advicecont);
+
+            const generalPop = document.createElement("h3");
+            generalPop.textContent = "General Population: " + airqualdata.data.health_recommendations.general_population;
+            airqualcard.appendChild(generalPop);
+
+            const elderly = document.createElement("h3");
+            elderly.textContent = "Elderly: " + airqualdata.data.health_recommendations.elderly;
+            airqualcard.appendChild(elderly);
+
+            const pregnant = document.createElement("h3");
+            pregnant.textContent = "Pregnant: " + airqualdata.data.health_recommendations.pregnant_women;
+            airqualcard.appendChild(pregnant);
         }
     };
     airqualityrequest.send();
+
+    var pollenrequest = new XMLHttpRequest();
+    pollenrequest.open("GET", "https://api.breezometer.com/pollen/v2/forecast/daily?lat=52.5695&lon=-0.2405&key=5b5963bd0ebf4a25905e20be69ca3f83&features=types_information,plants_information&days=1", true);
+    pollenrequest.onload = function () {
+        var pollendata = JSON.parse(this.response);
+        if (pollenrequest.status >= 200 &&  pollenrequest.status < 400) {
+            const pollencard = document.getElementById("polleninfo");
+            for (x in pollendata.data[0].types) {
+                console.log(x);
+                if (pollendata.data[0].types[x].data_available === true) {
+                    const pollenheader = document.createElement("h2");
+                    pollenheader.textContent = pollendata.data[0].types[x].display_name;
+                    pollencard.appendChild(pollenheader);
+                    const pollenindex = document.createElement("h3");
+                    pollenindex.textContent = "Index: " + pollendata.data[0].types[x].index.value + " - ";
+                    const polcatcol = document.createElement("span");
+                    polcatcol.textContent = pollendata.data[0].types[x].index.category;
+                    polcatcol.style = "color: " + pollendata.data[0].types[x].index.color;
+                    pollenindex.appendChild(polcatcol);
+                    pollencard.appendChild(pollenindex);
+                }
+            }
+        }
+    }
+    pollenrequest.send();
 });
