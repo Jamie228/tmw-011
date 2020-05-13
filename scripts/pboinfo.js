@@ -35,10 +35,12 @@ $(document).ready(function () {
             uv.textContent = "UV Index: " + darkskydata.currently.uvIndex;
             weathercard.appendChild(uv);
             const pressure = document.createElement("h3");
-            pressure.textContent = "Pressure: " + darkskydata.currently.pressure + " mb";
+            pressure.textContent =
+                "Pressure: " + darkskydata.currently.pressure + " mb";
             weathercard.appendChild(pressure);
             const cloudcover = document.createElement("h3");
-            cloudcover.textContent = "Cloud Cover: " + darkskydata.currently.cloudCover * 100 + "%";
+            cloudcover.textContent =
+                "Cloud Cover: " + darkskydata.currently.cloudCover * 100 + "%";
             weathercard.appendChild(cloudcover);
         } else {}
     };
@@ -56,13 +58,13 @@ $(document).ready(function () {
         if (airqualityrequest.status >= 200 && airqualityrequest.status < 400) {
             const airqualcard = document.getElementById("airquality");
             const aqistatus = document.createElement("h2");
-            aqistatus.textContent =
-                "Daily Air Quality Index (DAQI): ";
+            aqistatus.textContent = "Daily Air Quality Index (DAQI): ";
             const aqcolour = document.createElement("span");
             aqcolour.style = "color: " + airqualdata.data.indexes.baqi.color;
-            aqcolour.textContent = airqualdata.data.indexes.gbr_defra.aqi +
-            " - " +
-            airqualdata.data.indexes.gbr_defra.category;
+            aqcolour.textContent =
+                airqualdata.data.indexes.gbr_defra.aqi +
+                " - " +
+                airqualdata.data.indexes.gbr_defra.category;
 
             aqistatus.appendChild(aqcolour);
             airqualcard.appendChild(aqistatus);
@@ -72,11 +74,15 @@ $(document).ready(function () {
             for (x in airqualdata.data.pollutants) {
                 if (x == dompoll) {
                     dompoll = airqualdata.data["pollutants"][x]["full_name"];
-                    var dompollquant = airqualdata.data["pollutants"][x]["concentration"]["value"] + airqualdata.data["pollutants"][x]["concentration"]["units"];
-                    var dompolldesc = airqualdata.data["pollutants"][x]["sources_and_effects"]["effects"];
+                    var dompollquant =
+                        airqualdata.data["pollutants"][x]["concentration"]["value"] +
+                        airqualdata.data["pollutants"][x]["concentration"]["units"];
+                    var dompolldesc =
+                        airqualdata.data["pollutants"][x]["sources_and_effects"]["effects"];
                 }
             }
-            dominant_pollutant.textContent = "Dominant Pollutant: " + dompoll + " (" + dompollquant + ")";
+            dominant_pollutant.textContent =
+                "Dominant Pollutant: " + dompoll + " (" + dompollquant + ")";
             airqualcard.appendChild(dominant_pollutant);
 
             const polldesc = document.createElement("h3");
@@ -109,25 +115,33 @@ $(document).ready(function () {
             airqualcard.appendChild(advicecont);
 
             const generalPop = document.createElement("h3");
-            generalPop.textContent = "General Population: " + airqualdata.data.health_recommendations.general_population;
+            generalPop.textContent =
+                "General Population: " +
+                airqualdata.data.health_recommendations.general_population;
             airqualcard.appendChild(generalPop);
 
             const elderly = document.createElement("h3");
-            elderly.textContent = "Elderly: " + airqualdata.data.health_recommendations.elderly;
+            elderly.textContent =
+                "Elderly: " + airqualdata.data.health_recommendations.elderly;
             airqualcard.appendChild(elderly);
 
             const pregnant = document.createElement("h3");
-            pregnant.textContent = "Pregnant: " + airqualdata.data.health_recommendations.pregnant_women;
+            pregnant.textContent =
+                "Pregnant: " + airqualdata.data.health_recommendations.pregnant_women;
             airqualcard.appendChild(pregnant);
         }
     };
     airqualityrequest.send();
 
     var pollenrequest = new XMLHttpRequest();
-    pollenrequest.open("GET", "https://api.breezometer.com/pollen/v2/forecast/daily?lat=52.5695&lon=-0.2405&key=5b5963bd0ebf4a25905e20be69ca3f83&features=types_information,plants_information&days=1", true);
+    pollenrequest.open(
+        "GET",
+        "https://api.breezometer.com/pollen/v2/forecast/daily?lat=52.5695&lon=-0.2405&key=5b5963bd0ebf4a25905e20be69ca3f83&features=types_information,plants_information&days=1",
+        true
+    );
     pollenrequest.onload = function () {
         var pollendata = JSON.parse(this.response);
-        if (pollenrequest.status >= 200 &&  pollenrequest.status < 400) {
+        if (pollenrequest.status >= 200 && pollenrequest.status < 400) {
             const pollencard = document.getElementById("polleninfo");
             for (x in pollendata.data[0].types) {
                 //console.log(x);
@@ -136,7 +150,8 @@ $(document).ready(function () {
                     pollenheader.textContent = pollendata.data[0].types[x].display_name;
                     pollencard.appendChild(pollenheader);
                     const pollenindex = document.createElement("h3");
-                    pollenindex.textContent = "Index: " + pollendata.data[0].types[x].index.value + " - ";
+                    pollenindex.textContent =
+                        "Index: " + pollendata.data[0].types[x].index.value + " - ";
                     const polcatcol = document.createElement("span");
                     polcatcol.textContent = pollendata.data[0].types[x].index.category;
                     polcatcol.style = "color: " + pollendata.data[0].types[x].index.color;
@@ -145,28 +160,38 @@ $(document).ready(function () {
                 }
             }
         }
-    }
+    };
     pollenrequest.send();
 
     var streetCrimeRequest = new XMLHttpRequest();
-    streetCrimeRequest.open("GET", "https://data.police.uk/api/crimes-street/all-crime?lat=52.5695&lng=-0.2405", true);
+    streetCrimeRequest.open(
+        "GET",
+        "https://data.police.uk/api/crimes-street/all-crime?lat=52.5695&lng=-0.2405",
+        true
+    );
     streetCrimeRequest.onload = function () {
         var streetCrimeData = JSON.parse(this.response);
-            const policeCard = document.getElementById("policedata");
-            const streetCrimes = document.createElement("h3");
-            streetCrimes.textContent = "Street Crimes in Last Month: " + streetCrimeData.length;
-            policeCard.appendChild(streetCrimes);
-    }
+        const policeCard = document.getElementById("policedata");
+        const streetCrimes = document.createElement("h3");
+        streetCrimes.textContent =
+            "Street Crimes in Last Month: " + streetCrimeData.length;
+        policeCard.appendChild(streetCrimes);
+    };
     streetCrimeRequest.send();
 
     var stopSearchRequest = new XMLHttpRequest();
-    stopSearchRequest.open("GET", "https://data.police.uk/api/stops-street?lat=52.5695&lng=-0.2405", true);
-    stopSearchRequest.onload = function() {
+    stopSearchRequest.open(
+        "GET",
+        "https://data.police.uk/api/stops-street?lat=52.5695&lng=-0.2405",
+        true
+    );
+    stopSearchRequest.onload = function () {
         var stopSearchData = JSON.parse(this.response);
         const policeCard = document.getElementById("policedata");
         const stopSearch = document.createElement("h3");
-        stopSearch.textContent = "Stop and Searches in Last Month: " + stopSearchData.length;
+        stopSearch.textContent =
+            "Stop and Searches in Last Month: " + stopSearchData.length;
         policeCard.appendChild(stopSearch);
-    }
+    };
     stopSearchRequest.send();
 });
