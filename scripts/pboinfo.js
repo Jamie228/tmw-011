@@ -130,7 +130,7 @@ $(document).ready(function () {
         if (pollenrequest.status >= 200 &&  pollenrequest.status < 400) {
             const pollencard = document.getElementById("polleninfo");
             for (x in pollendata.data[0].types) {
-                console.log(x);
+                //console.log(x);
                 if (pollendata.data[0].types[x].data_available === true) {
                     const pollenheader = document.createElement("h2");
                     pollenheader.textContent = pollendata.data[0].types[x].display_name;
@@ -147,4 +147,32 @@ $(document).ready(function () {
         }
     }
     pollenrequest.send();
+
+    var streetCrimeRequest = new XMLHttpRequest();
+    streetCrimeRequest.open("GET", "https://data.police.uk/api/crimes-street/all-crime?lat=52.5695&lng=-0.2405", true);
+    streetCrimeRequest.onload = function () {
+        var streetCrimeData = JSON.parse(this.response);
+            const policeCard = document.getElementById("policedata");
+            const streetCrimes = document.createElement("h3");
+            streetCrimes.textContent = "Street Crimes in Last Month: " + streetCrimeData.length;
+            policeCard.appendChild(streetCrimes);
+    }
+    streetCrimeRequest.send();
+
+    var stopSearchRequest = new XMLHttpRequest();
+    stopSearchRequest.open("GET", "https://data.police.uk/api/stops-street?lat=52.5695&lng=-0.2405", true);
+    stopSearchRequest.onload = function() {
+        var stopSearchData = JSON.parse(this.response);
+        const policeCard = document.getElementById("policedata");
+        const stopSearch = document.createElement("h3");
+        stopSearch.textContent = "Stop and Searches in Last Month: " + stopSearchData.length;
+        policeCard.appendChild(stopSearch);
+
+        const note = document.createElement("h3");
+        const noteText = document.createElement("em");
+        noteText.textContent = "Please Note: This data is within a 1 mile radius of the City centre for the last month. For non-emergencies, contact Cambridgeshire Constabulary on 101";
+        note.appendChild(noteText);
+        policeCard.appendChild(note);
+    }
+    stopSearchRequest.send();
 });
