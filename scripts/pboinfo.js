@@ -167,12 +167,6 @@ $(document).ready(function () {
         const stopSearch = document.createElement("h3");
         stopSearch.textContent = "Stop and Searches in Last Month: " + stopSearchData.length;
         policeCard.appendChild(stopSearch);
-
-        const note = document.createElement("h3");
-        const noteText = document.createElement("em");
-        noteText.textContent = "Please Note: This data is within a 1 mile radius of the City centre for the last month. For non-emergencies, contact Cambridgeshire Constabulary on 101";
-        note.appendChild(noteText);
-        policeCard.appendChild(note);
     }
     stopSearchRequest.send();
 });
