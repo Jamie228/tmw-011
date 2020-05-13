@@ -421,6 +421,11 @@ html,body {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.btnLine {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 #closestPlace {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
