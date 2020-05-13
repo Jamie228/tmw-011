@@ -35,7 +35,7 @@ $(document).ready(function () {
             uv.textContent = "UV Index: " + darkskydata.currently.uvIndex;
             weathercard.appendChild(uv);
         } else {}
-    }
+    };
     darkskyrequest.send();
 
     var airqualityrequest = new XMLHttpRequest();
@@ -50,10 +50,49 @@ $(document).ready(function () {
         if (airqualityrequest.status >= 200 && airqualityrequest.status < 400) {
             const airqualcard = document.getElementById("airquality");
             const aqistatus = document.createElement("h3");
-            aqistatus.textContent = "Daily Air Quality Index (DAQI): " + airqualdata.data.indexes.gbr_defra.aqi + " - " + airqualdata.data.indexes.gbr_defra.category;
-            airqualcard.style = "border-color: " + airqualdata.data.indexes.baqi.color;
+            aqistatus.textContent =
+                "Daily Air Quality Index (DAQI): " +
+                airqualdata.data.indexes.gbr_defra.aqi +
+                " - " +
+                airqualdata.data.indexes.gbr_defra.category;
+            airqualcard.style =
+                "border-color: " + airqualdata.data.indexes.baqi.color;
             airqualcard.appendChild(aqistatus);
+
+            var dompoll = airqualdata.data.indexes.gbr_defra.dominant_pollutant;
+            const dominant_pollutant = document.createElement("h3");
+            for (x in airqualdata.data.pollutants) {
+                if (x == dompoll) {
+                    dompoll = airqualdata.data["pollutants"][x]["full_name"];
+                    var dompolldesc = airqualdata.data["pollutants"][x]["sources_and_effects"]["effects"];
+                }
+            }
+            dominant_pollutant.textContent = "Dominant Pollutant: " + dompoll;
+            airqualcard.appendChild(dominant_pollutant);
+
+            const polldesc = document.createElement("h3");
+            polldesc.textContent = dompolldesc;
+            airqualcard.appendChild(polldesc);
+
+            const pollheadcont = document.createElement("h2");
+            const pollhead = document.createElement("u");
+            pollhead.textContent = "Pollutants:";
+            pollheadcont.appendChild(pollhead);
+            airqualcard.appendChild(pollheadcont);
+
+            for (x in airqualdata.data.pollutants) {
+                const poll = document.createElement("h3");
+                poll.textContent =
+                    airqualdata.data["pollutants"][x]["full_name"] +
+                    " (" +
+                    airqualdata.data["pollutants"][x]["display_name"] +
+                    ") : " +
+                    airqualdata.data["pollutants"][x]["concentration"]["value"] +
+                    " " +
+                    airqualdata.data["pollutants"][x]["concentration"]["units"];
+                airqualcard.appendChild(poll);
+            }
         }
-    }
+    };
     airqualityrequest.send();
 });
