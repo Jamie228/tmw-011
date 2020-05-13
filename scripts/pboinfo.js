@@ -57,12 +57,14 @@ $(document).ready(function () {
             const airqualcard = document.getElementById("airquality");
             const aqistatus = document.createElement("h2");
             aqistatus.textContent =
-                "Daily Air Quality Index (DAQI): " +
-                airqualdata.data.indexes.gbr_defra.aqi +
-                " - " +
-                airqualdata.data.indexes.gbr_defra.category;
-            airqualcard.style =
-                "border-color: " + airqualdata.data.indexes.baqi.color;
+                "Daily Air Quality Index (DAQI): ";
+            const aqcolour = document.createElement("span");
+            aqcolour.style = "color: " + airqualdata.data.indexes.baqi.color;
+            aqcolour.textContent = airqualdata.data.indexes.gbr_defra.aqi +
+            " - " +
+            airqualdata.data.indexes.gbr_defra.category;
+
+            aqistatus.appendChild(aqcolour);
             airqualcard.appendChild(aqistatus);
 
             var dompoll = airqualdata.data.indexes.gbr_defra.dominant_pollutant;
