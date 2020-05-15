@@ -28,9 +28,7 @@
         content="A website for GoPeterborough, with things to do in and information about the city of Peterborough.">
     <meta name="author" content="Jamie Hamilton">
 
-    <script src="scripts/locationsuggestion.js"></script>
-
-    <title>Things To Do - GoPeterborough</title>
+    <title>Places to Eat - GoPeterborough</title>
 </head>
 
 <body>
@@ -40,8 +38,8 @@
     </header>
     <nav class="topnav" id="myTopnav">
         <a href="index.html">Home</a>
-        <a href="#thingstodo" class="active">Things to Do</a>
-        <a href="placestoeat.html">Places to Eat</a>
+        <a href="thingstodo.html">Things to Do</a>
+        <a href="#placestoeat" class="active">Places to Eat</a>
         <a href="whatson.html">What's On</a>
         <a href="pboinfo.html">Peterborough Info</a>
         <a href="javascript:void(0);" class="icon" onclick="topnavExpand()">
@@ -49,19 +47,10 @@
         </a>
     </nav>
 
-    <div class="thingstodotitle things background-tint">
-        <h1>Things to Do</h1>
-        <h2>Find Wonderful Activities to Do in the City</h2>
+    <div class="thingstodotitle toeat background-tint">
+        <h1>Places to Eat</h1>
+        <h2>Information from Zomato about Restaurants in the City</h2>
     </div>
-
-    <p style="text-align: center;"><button id="getClosest" class="btn" onclick="getLocation()">Find the Closest
-            Activity to You!</button></p>
-
-    <div id="closestPlace" class="cardhidden"></div>
-
-    <h1 class="heading">Try One of our <b id="activityAmount"></b> Activities!</h1>
-
-    <div id="allthingstodo" class="cards"></div>
 
     <footer>
         <p>&copy; GoPeterborough 2020</p>
@@ -76,8 +65,7 @@
     <script src="scripts/jQuery.min.js"></script>
     <script src="scripts/topnav.js"></script>
     <script src="scripts/darksky.js"></script>
-    <script src="scripts/thingstodo.js"></script>
-
+    <script src="scripts/pboinfo.js"></script>
 </body>
 
 </html>

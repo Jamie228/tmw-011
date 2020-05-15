@@ -201,6 +201,16 @@ html,body {
 
 /* PAGE HEADERS AND BANNERS  */
 
+.toeat {
+  background-image: url(../images/carousel/burghley.jpg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
 .pboinfo {
   background-image: url(../images/carousel/buttercross2.jpg);
   padding-top: 15px;
