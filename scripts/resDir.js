@@ -63,39 +63,39 @@ function directions(position, tlat, tlon, restaurantName) {
   );
 
   tomTomReq.onload = function () {
-      var dirData = JSON.parse(this.response);
-      if (tomTomReq.status >= 200 && tomTomReq.status < 400) {
-          const dirContainer = document.getElementById("restaurantDir");
-          while (dirContainer.firstChild) {
-              dirContainer.removeChild(dirContainer.firstChild);
-          }
-          const header = document.createElement("h2");
-          const headerUl = document.createElement("u");
-          headerUl.textContent = "Directions to " + restaurantName;
-          header.appendChild(headerUl);
-          dirContainer.appendChild(header);
-
-          dirData.routes[0].guidance.instructions.forEach(instruction => {
-              const message = document.createElement("h3");
-              message.textContent = instruction.message;
-              dirContainer.appendChild(message);
-          });
-
-          const btn = document.createElement("button");
-          btn.className = "btn";
-          btn.textContent = "Close";
-          btn.setAttribute("onclick", "closeDir()");
-          dirContainer.appendChild(btn);
-
-          dirContainer.className = "card weathersuggest";
-          location.hash = "restaurantDir";
+    var dirData = JSON.parse(this.response);
+    if (tomTomReq.status >= 200 && tomTomReq.status < 400) {
+      const dirContainer = document.getElementById("restaurantDir");
+      while (dirContainer.firstChild) {
+        dirContainer.removeChild(dirContainer.firstChild);
       }
-  }
+      const header = document.createElement("h2");
+      const headerUl = document.createElement("u");
+      headerUl.textContent = "Directions to " + restaurantName;
+      header.appendChild(headerUl);
+      dirContainer.appendChild(header);
+
+      dirData.routes[0].guidance.instructions.forEach((instruction) => {
+        const message = document.createElement("h3");
+        message.textContent = instruction.message;
+        dirContainer.appendChild(message);
+      });
+
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = "Close";
+      btn.setAttribute("onclick", "closeDir()");
+      dirContainer.appendChild(btn);
+
+      dirContainer.className = "card weathersuggest";
+      location.hash = "restaurantDir";
+    }
+  };
   tomTomReq.send();
 }
 
-function closeDir () {
-    const directions = document.getElementById("restaurantDir");
-    directions.className = "cardhidden weathersuggest"
-    location.hash = "brand";
+function closeDir() {
+  const directions = document.getElementById("restaurantDir");
+  directions.className = "cardhidden weathersuggest";
+  location.hash = "brand";
 }
