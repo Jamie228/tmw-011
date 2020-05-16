@@ -97,5 +97,5 @@ function directions(position, tlat, tlon, restaurantName) {
 function closeDir () {
     const directions = document.getElementById("restaurantDir");
     directions.className = "cardhidden weathersuggest"
-    window.scrollTo(0, 0);
+    location.hash = "brand";
 }
