@@ -14,22 +14,42 @@ $(document).ready(function () {
                 resCard.className = "card";
                 const resCardContainer = document.createElement("div");
                 resCardContainer.className = "card-container";
+                //Title
                 const name = document.createElement("h3");
                 name.textContent = element.restaurant.name;
                 resCardContainer.appendChild(name);
+                //Address
                 const address = document.createElement("h4");
                 address.textContent = element.restaurant.location.address;
                 resCardContainer.appendChild(address);
+                //Cuisines
                 const cuisines = document.createElement("h4");
                 cuisines.textContent = "Cuisines: " + element.restaurant.cuisines;
                 resCardContainer.appendChild(cuisines);
+                //Rating
                 const rating = document.createElement("h4");
                 rating.textContent = "Aggregate Rating: ";
+                //Rating Coloured Span
                 const ratingtxt = document.createElement("span");
                 ratingtxt.style = "color: #" + element.restaurant.user_rating.rating_color;
                 ratingtxt.textContent = element.restaurant.user_rating.aggregate_rating + " (" + element.restaurant.user_rating.rating_text + ")";
                 rating.appendChild(ratingtxt);
                 resCardContainer.appendChild(rating);
+                //Direction Button
+                const dirBtn = document.createElement("button");
+                dirBtn.className = "btn";
+                dirBtn.id = element.restaurant.R.res_id;
+                dirBtn.setAttribute("onclick", "initZomato(this.id)");
+                dirBtn.textContent = "Get Directions";
+                resCardContainer.appendChild(dirBtn);
+                //Zomato Link
+                const linkholder = document.createElement("p");
+                const link = document.createElement("a");
+                link.href = element.restaurant.url;
+                link.className = "btn";
+                link.textContent = "See On Zomato";
+                linkholder.appendChild(link);
+                resCardContainer.appendChild(linkholder);
 
                 resCard.appendChild(resCardContainer);
                 rescontainer.appendChild(resCard);
