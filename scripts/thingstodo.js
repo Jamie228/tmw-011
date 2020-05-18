@@ -219,11 +219,18 @@ thingstododata.forEach((item) => {
   const innercardcontiner = document.createElement("div");
   innercardcontiner.setAttribute("class", "card-container");
 
+  const pic = document.createElement("picture");
+  const src = document.createElement("source");
+  src.type = "image/webp";
+  src.srcset = "images/webp/thingstodo/" + item.image + ".webp";
+  pic.append(src);
+
   const img = document.createElement("img");
   img.src = "images/thingstodo/" + item.image;
   img.setAttribute("style", "width:100%;");
   img.alt = item.alt;
-  card.appendChild(img);
+  pic.appendChild(img);
+  card.appendChild(pic);
 
   const title = document.createElement("h3");
   title.textContent = item.name + " ";
