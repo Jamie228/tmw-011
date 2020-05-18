@@ -60,7 +60,7 @@ $(document).ready(function () {
             const aqistatus = document.createElement("h2");
             aqistatus.textContent = "Daily Air Quality Index (DAQI): ";
             const aqcolour = document.createElement("span");
-            aqcolour.style = "color: " + airqualdata.data.indexes.baqi.color;
+            //aqcolour.style = "color: " + airqualdata.data.indexes.baqi.color;
             aqcolour.textContent =
                 airqualdata.data.indexes.gbr_defra.aqi +
                 " - " +
@@ -154,7 +154,7 @@ $(document).ready(function () {
                         "Index: " + pollendata.data[0].types[x].index.value + " - ";
                     const polcatcol = document.createElement("span");
                     polcatcol.textContent = pollendata.data[0].types[x].index.category;
-                    polcatcol.style = "color: " + pollendata.data[0].types[x].index.color;
+                    //polcatcol.style = "color: " + pollendata.data[0].types[x].index.color;
                     pollenindex.appendChild(polcatcol);
                     pollencard.appendChild(pollenindex);
                 }
