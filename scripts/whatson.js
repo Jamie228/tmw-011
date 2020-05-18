@@ -25,6 +25,7 @@ $(document).ready(function () {
         //Create image for event and append to card
         const image = document.createElement("img");
         image.src = event.images[0].url;
+        image.alt = "Image of " + event.name + " from Ticketmaster";
         image.setAttribute("style", "width: 100%;");
         card.appendChild(image);
 
