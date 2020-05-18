@@ -226,7 +226,7 @@ thingstododata.forEach((item) => {
   pic.append(src);
 
   const img = document.createElement("img");
-  img.src = "images/thingstodo/" + item.image;
+  img.src = "images/thingstodo/" + item.image + ".jpg";
   img.setAttribute("style", "width:100%;");
   img.alt = item.alt;
   pic.appendChild(img);
