@@ -56,7 +56,12 @@
 
         <div>
             <picture>
-                <source type="image/webp" srcset="images/webp/carousel/cathedral.webp">
+                <source media="(min-width: 1920px)" srcset="images/webp/carousel/1920/cathedral.webp">
+                <source media="(min-width: 1366px)" srcset="images/webp/carousel/1366/cathedral.webp">
+                <source media="(min-width: 1280px)" srcset="images/webp/carousel/1280/cathedral.webp">
+                <source media="(min-width: 768px)" srcset="images/webp/carousel/768/cathedral.webp">
+                <source media="(min-width: 412px)" srcset="images/webp/carousel/412/cathedral.webp">
+                <source media="(min-width: 320px)" srcset="images/webp/carousel/320/cathedral.webp">
                 <img class="carousel-image" src="images/carousel/cathedral.jpg"
                     alt="Front of Peterborough Cathedral on a fairly bright day, with a few people walking around the front of the building. Trees to the left and right of the cathedral.">
             </picture>
@@ -130,7 +135,8 @@
                 slidesToShow: 1,
                 adaptiveHeight: true,
                 autoplay: true,
-                autoplaySpeed: 2000
+                autoplaySpeed: 2000,
+                arrows: false
             });
         });
     </script>
