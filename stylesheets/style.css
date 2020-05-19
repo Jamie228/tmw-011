@@ -514,7 +514,7 @@ footer {
   .cards { grid-template-columns: repeat(2, 1fr); grid-template-areas: "card card"; }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .cards { grid-template-columns: repeat(3, 1fr); grid-template-areas: "card card card"; }
 }
 
