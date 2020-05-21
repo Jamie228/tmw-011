@@ -208,6 +208,7 @@ amount.textContent = thingstododata.length;
 thingstododata.forEach((item) => {
   const weathersuggesticon = document.createElement("i");
 
+  //Set icon based on goodforpoorweather property
   if (item.goodforpoorweather === true) {
     weathersuggesticon.setAttribute("class", "wi wi-rain-mix");
   } else {
@@ -219,6 +220,7 @@ thingstododata.forEach((item) => {
   const innercardcontiner = document.createElement("div");
   innercardcontiner.setAttribute("class", "card-container");
 
+  //Create WebP picture element
   const pic = document.createElement("picture");
   const src = document.createElement("source");
   src.type = "image/webp";
@@ -232,27 +234,32 @@ thingstododata.forEach((item) => {
   pic.appendChild(img);
   card.appendChild(pic);
 
+  //Create title and append icon
   const title = document.createElement("h3");
   title.textContent = item.name + " ";
   title.appendChild(weathersuggesticon);
   innercardcontiner.appendChild(title);
-
+  
+  //Append type of activity
   const type = document.createElement("h4");
   const typetext = document.createElement("i");
   typetext.textContent = item.type;
   type.appendChild(typetext);
   innercardcontiner.appendChild(type);
 
+  //Append address
   const address = document.createElement("h4");
   address.textContent = item.address;
   innercardcontiner.appendChild(address);
 
+  //Append button with link to full info page
   const button = document.createElement("a");
   button.setAttribute("class", "btn");
   button.href = item.link;
   button.textContent = "Discover " + item.name;
   innercardcontiner.appendChild(button);
 
+  //Append card to document
   card.appendChild(innercardcontiner);
   cardscontainer.appendChild(card);
 });

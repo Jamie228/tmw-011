@@ -1,14 +1,18 @@
 $(document).ready(function () {
+    //Create and open request
     var zomatoRequest = new XMLHttpRequest();
     zomatoRequest.open("GET", "https://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/search?apikey=2a58f788418e59eed4689d8f9d1ceeb5&entity_id=109711&entity_type=subzone", true);
 
+    //Function to trigger when request loads
     zomatoRequest.onload = function () {
         var zomatoData = JSON.parse(this.response);
         if (zomatoRequest.status >= 200 && zomatoRequest.status < 400) {
             const rescontainer = document.getElementById("restuarants");
             const heading = document.getElementById("resHead");
+            //Output amount of restaurants returned by counting length of array
             heading.textContent = "Try One of These " + zomatoData.restaurants.length + " Restaurants!";
 
+            //Foreach element in returned JSON array
             zomatoData.restaurants.forEach(element => {
                 const resCard = document.createElement("div");
                 resCard.className = "card";
@@ -55,8 +59,9 @@ $(document).ready(function () {
                 rescontainer.appendChild(resCard);
             });
         } else {
+            //Append error
             const head = document.getElementById("resHead");
-            head.textContent = "Zomato Daata Cannot be Reached at This Time :(";
+            head.textContent = "Zomato Daata Cannot be Reached at This Time";
         }
     }
     zomatoRequest.send();

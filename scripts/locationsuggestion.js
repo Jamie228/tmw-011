@@ -218,6 +218,7 @@ function getLocation() {
   }
 }
 
+//Inform user location unavailable
 function unavilable() {
   const closestContainer = document.getElementById("closestPlace");
   const closestText = document.createElement("h1");
@@ -226,10 +227,8 @@ function unavilable() {
   closestContainer.appendChild(closestText);
 }
 
+//FUnction to trigger if location available
 function suggest(position) {
-  //Log coords to console - TESTING
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
 
   //Begin to calculate distance between each item and the user using the Haversine Formula.
 
@@ -257,9 +256,6 @@ function suggest(position) {
   //Get index of this item and then assign the item with the same index in the thingstodo array to a variable
   var disindex = distances.indexOf(min);
   var closestItem = thingstododata[disindex];
-
-  //Add to cookie
-  document.cookie = "closestItem=" + closestItem.name;
 
   //Create object on page to display this information
   const closestContainer = document.getElementById("closestPlace");

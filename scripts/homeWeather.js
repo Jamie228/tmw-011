@@ -324,12 +324,14 @@ $(document).ready(function () {
         //Assign three randomly selected items to the finalList array
         var finalList = [item1, item2, item3];
 
-        //FOr each item in the new array, create a card and append it to the document
+        //For each item in the new array, create a card and append it to the document
         finalList.forEach((item) => {
           const card = document.createElement("div");
           card.setAttribute("class", "card");
 
           thingstodocontainer.appendChild(card);
+
+          //Create Pictue element to serve WebP image and JPG fallback
 
           const pic = document.createElement("picture");
           const src = document.createElement("source");
@@ -352,11 +354,15 @@ $(document).ready(function () {
 
           card.appendChild(cardcontainer);
 
+          //Activity Title
+
           const titlecontainer = document.createElement("h3");
           const title = document.createElement("b");
           title.textContent = item.name;
           titlecontainer.appendChild(title);
           cardcontainer.appendChild(titlecontainer);
+
+          //Activity Type
 
           const typecontainer = document.createElement("h4");
           const type = document.createElement("i");
@@ -364,11 +370,15 @@ $(document).ready(function () {
           typecontainer.appendChild(type);
           cardcontainer.appendChild(typecontainer);
 
+          //Activity Description
+
           const description = document.createElement("p");
           item.description = item.description.substring(0, 300);
           description.textContent = `${item.description}...`;
 
           cardcontainer.appendChild(description);
+
+          //Activity Link to Full Page
 
           const button = document.createElement("a");
           button.setAttribute("class", "btn");
@@ -377,6 +387,8 @@ $(document).ready(function () {
 
           cardcontainer.appendChild(button);
         });
+
+        //As previous but for poor weather items
       } else if (poorWeather === false) {
         thingstodo.forEach((thing) => {
           if (thing.goodforpoorweather === false) {

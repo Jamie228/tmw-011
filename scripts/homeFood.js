@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   var resrequest = new XMLHttpRequest();
 
+  //Open request to Zomato
   resrequest.open(
     "GET",
     "https://developers.zomato.com/api/v2.1/search?apikey=2a58f788418e59eed4689d8f9d1ceeb5&entity_id=109711&entity_type=subzone",
@@ -13,9 +14,11 @@ $(document).ready(function () {
     var resdata = JSON.parse(this.response);
     if (resrequest.status >= 200 && resrequest.status < 400) {
       var restaurants = resdata.restaurants;
+      //Select random restaurant from returned and store in variable
       var restaurant =
         restaurants[Math.floor(Math.random() * restaurants.length)];
 
+      //Create card and append to document
       const card = document.createElement("div");
       card.setAttribute("class", "card rescard");
 
@@ -33,6 +36,8 @@ $(document).ready(function () {
       address.textContent = restaurant.restaurant.location.address;
 
       cardcontainer.appendChild(address);
+
+      //Create image with src of static MapQuest map with marker and centred at lat/lon of restaurant
 
       const map = document.createElement("img");
       map.setAttribute("alt", "Map of " + restaurant.restaurant.name);
@@ -52,6 +57,7 @@ $(document).ready(function () {
 
       const linkcontainer = document.createElement("p");
 
+      //Create link to Zomato
       const link = document.createElement("a");
       link.setAttribute("class", "btn");
       link.target = "_blank";
@@ -62,6 +68,7 @@ $(document).ready(function () {
       linkcontainer.appendChild(link);
       cardcontainer.appendChild(linkcontainer);
 
+      //Append
       card.appendChild(cardcontainer);
       rescard.appendChild(card);
     }
