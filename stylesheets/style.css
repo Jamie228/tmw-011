@@ -518,7 +518,7 @@ footer {
   .cards { grid-template-columns: repeat(3, 1fr); grid-template-areas: "card card card"; }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1024px){
   .about-grid { grid-template-columns: 1fr; grid-template-rows: auto;;}
 }
 
